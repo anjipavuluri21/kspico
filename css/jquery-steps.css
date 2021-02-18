@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+.step-app							{width: 100%; max-width: 600px; margin-left: auto; margin-right: auto;}
+.step-app > .step-steps 			{margin: 0; padding: 0; width: 100%; margin-bottom: 2rem;}
+.step-app > .step-steps > li 		{list-style: none; cursor: pointer; display: inline-block; width: auto; height: auto; padding: .5rem 1.5rem; text-align: center; color: #333; background-color: #e5e5e5;
+	-webkit-border-radius: 2rem;
+	-moz-border-radius: 2rem;
+	border-radius: 2rem;}
+.step-app > .step-steps > li:hover	{background-color: #ddd;}
+.step-app > .step-steps > li:last-child a {border: none;}
+.step-app > .step-steps > li.active {background-color: #0971ce; color: #fff;}
+.step-app > .step-steps > li.error	{background-color: #e7505a; color: #fff;}
+.step-app > .step-steps > li.done	{background-color: #3cb371; color: #fff;}
+.step-app > .step-steps > li > .number {background: #fff; padding: 0 8px; display: inline-block; text-align: center; margin-right: 15px; border-radius: 3px; color: #333;}
+.step-app > .step-content {margin-bottom: 2rem;}
+
+.step-app > .step-content > .step-tab-panel {display: none;}
+.step-app > .step-content > .step-tab-panel.active {display: block;}
+.step-app > .step-footer {margin-top: 15px; margin-bottom: 15px;}
+.step-app > .step-footer > .step-btn {padding: 4px 16px; color: #333; text-decoration: none; background: #e5e5e5; border-radius: 3px; border: none; outline: none; cursor: pointer;}
+
+
+/* Mobile - For 480 Resolution */  
+@media only screen   
+and (min-width : 320px)   
+and (max-width : 640px)
+{
+.step-app > .step-steps > li 		{margin-bottom: .25rem;}	
+	
+}
