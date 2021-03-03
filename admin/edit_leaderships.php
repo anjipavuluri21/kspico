@@ -7,7 +7,7 @@ if (isset($_REQUEST['id'])) {
 }
 
 if (isset($_POST['submit'])) {
-    $type = $_POST['type'];
+    $designation = $_POST['designation'];
     $title = mysqli_real_escape_string($connection, $_POST['title']);
     $content = $_POST['content'];
 
@@ -19,15 +19,15 @@ if (isset($_POST['submit'])) {
         $extension_icon = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
 
         //start with no suffix
-        while (file_exists("../uploads/companyvalues/" . $name_icon . $increment_icon . '.' . $extension_icon)) {
+        while (file_exists("../uploads/leaderships/" . $name_icon . $increment_icon . '.' . $extension_icon)) {
             $increment_icon++;
         }
 
         $basename_icon = $name_icon . $increment_icon . '.' . $extension_icon;
 
-        $blocation_icon = "uploads/companyvalues/" . $basename_icon;
+        $blocation_icon = "uploads/leaderships/" . $basename_icon;
 
-        $target_file_icon = "../uploads/companyvalues/" . $basename_icon;
+        $target_file_icon = "../uploads/leaderships/" . $basename_icon;
         if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file_icon)) {
             $image = $blocation_icon;
             
@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
 
     if ($id == 0) {
         
-        $login_query = mysqli_query($connection, "insert into sumc_company_values (type,title,content,image,status,created_date) values ('$type','$title','$content','$image',1,NOW())");
+        $login_query = mysqli_query($connection, "insert into sumc_leaderships (designation,title,content,image,status,created_date) values ('$designation','$title','$content','$image',1,NOW())");
         
         
     } else {
@@ -49,12 +49,12 @@ if (isset($_POST['submit'])) {
         }
 
 
-        $login_query = mysqli_query($connection, "update sumc_company_values set type='$type',title='$title',content='$content' $corse_img where id=" . $id);
+        $login_query = mysqli_query($connection, "update sumc_leaderships set designation='$designation',title='$title',content='$content' $corse_img where id=" . $id);
     }
     if ($login_query == 1) {
-        header("location:companyvalueslist.php?msg=success");
+        header("location:laedershipslist.php?msg=success");
     } else {
-        header("location:companyvalueslist.php?msg=fail");
+        header("location:laedershipslist.php?msg=fail");
     }
 }
 
@@ -65,10 +65,10 @@ $side_image = "";
 
 
 if ($id != 0) {
-    $features_sql = mysqli_query($connection, "select * from sumc_company_values where id=" . $id);
+    $features_sql = mysqli_query($connection, "select * from sumc_leaderships where id=" . $id);
     $booth_features_result = mysqli_fetch_array($features_sql);
 
-    $type = $booth_features_result['type'];
+    $designation = $booth_features_result['designation'];
     $title = $booth_features_result['title'];
     $image = $booth_features_result['image'];
     $content = $booth_features_result['content'];
@@ -87,7 +87,7 @@ if ($id != 0) {
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Dashboard - Sumc - Al Sultan United Medical co</title>
+        <title>Dashboard - Kuwait Saudi Pharmaceutical Industries Company</title>
 
         <!-- Custom fonts for this template-->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -114,33 +114,29 @@ if ($id != 0) {
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Company Values</h1>
+                    <h1 class="h3 mb-0 text-gray-800">LeaderShip</h1>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 mb-12">
                         <div class="card shadow mb-8">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">View Company Values</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Leaderships</h6>
                             </div>
                             <div class="card-body">
                                 <form action="" method="post" name="adv_form" id="adv_form" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Type<span class="required">*</span>
-                                        </label>                        
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <select name="type" id="cars" class="form-control" selected="selected">
-                                                <option value="Position">Position</option>
-                                                <option value="Vision">Vision</option>
-                                                <option value="Mision">Mision</option>
-                                                <option value="Values">Values</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Title<span class="required">*</span>
                                         </label>                        
                                         <div class="col-md-9 col-sm-9 col-xs-12">
                                             <input type="text" name="title" id="partner_name" class="form-control" required="required" value= "<?php echo $title;?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Designation<span class="required">*</span>
+                                        </label>                        
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" name="designation" id="partner_name" class="form-control" required="required" value= "<?php echo $designation;?>">
                                         </div>
                                     </div>
                                     <div class="form-group">

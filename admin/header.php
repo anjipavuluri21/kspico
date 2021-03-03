@@ -118,8 +118,9 @@ session_start();
         </a>
         <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="edit_mezzan.php">Add Mezzan</a>
-              <a class="collapse-item" href="edit_mezzantext.php">Add Mezzan text</a>
+              <a class="collapse-item" href="edit_mezzan.php">Add Home Mezzan</a>
+              <a class="collapse-item" href="edit_mezzantext.php">Add Mezzan Home title</a>
+              <a class="collapse-item" href="edit_mezzangroup.php">Add Mezzan Home Group</a>
               <a class="collapse-item" href="mezzanlist.php">View All Mezzan</a>
           
           </div>
@@ -148,9 +149,11 @@ session_start();
             <a class="collapse-item" href="edit_companyprofile.php">Edit Company Profile</a>
             <a class="collapse-item" href="edit_corporate.php">Edit Corporate History</a>
             <a class="collapse-item" href="corporatelist.php">View all Corporate History</a>
-           <a class="collapse-item" href="edit_banners.php">Edit Banners</a>
+            <a class="collapse-item" href="edit_leaderships.php">Edit Leaderships</a>
+            <a class="collapse-item" href="laedershipslist.php">View all Leaderships</a>
            <a class="collapse-item" href="edit_companyvalues.php">Edit Company Values</a>
-          <a class="collapse-item" href="edit_gmmessage.php">Edit Message From G.M.</a>
+           <a class="collapse-item" href="companyvalueslist.php">View Company Values</a>
+          <a class="collapse-item" href="edit_corporate_responsibility.php">View all Corporate Responsibility</a>
 		  <a class="collapse-item" href="edit_awardbanner.php">Edit Award Banner</a>
           <a class="collapse-item" href="edit_awards.php">Add Awards</a>
           <a class="collapse-item" href="awardslist.php">View All Awards</a>
