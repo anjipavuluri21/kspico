@@ -1,4 +1,5 @@
-<!doctype html>
+<?php include 'connection.php';?>
+<!doctype html >
 <html>
 <head>
 <meta charset="utf-8"><meta name="description" content="Kuwait Saudi Pharmaceutical Industries Company">

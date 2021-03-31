@@ -40,7 +40,7 @@ CKEDITOR.editorConfig = function( config ) {
 	//config.removeDialogTabs = 'image:advanced;link:advanced';
 	//config.extraPlugins = 'imageuploader';
 	//config.extraPlugins = 'uploadimage';
-	//config.imageUploadUrl = '/imageuploader/upload.php?type=Images';
+	config.imageUploadUrl = '/imageuploader/upload.php?type=Images';
 	config.filebrowserUploadUrl ="imageuploader/upload.php";
 	config.allowedContent = true;
 	config.extraPlugins = 'font,lineheight';

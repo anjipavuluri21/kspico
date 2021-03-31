@@ -165,20 +165,7 @@ $award_banner = $booth_features_result['award_banner'];
 							</div>
 							</div>
 				  
-				  <div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Award Image</label>
-							<div class="col-md-6 col-sm-6 col-xs-12">
-							<input type="file" name="award_banner" id="award_banner" class="form-control" />
-							<p id="note">Please upload image with size 2000X500</p>
-							<?php
-							if(isset($award_banner) && $award_banner != "") {
-								?>
-								<img src='../<?php echo $award_banner; ?>' height='150px' width='450px;' />
-								<?php
-							}
-							?>
-							</div>
-							</div>
+				
 							
 				<div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
